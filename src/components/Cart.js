@@ -3,7 +3,7 @@ import "../styles.css";
 
 import { connect } from 'react-redux';
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { Button } from 'react-bootstrap';
 import CartItem from './CartItem';
@@ -40,7 +40,9 @@ class Cart extends PureComponent {
         <p className="cart__total">Total: {this.getTotal()}.00$</p>
         <br />
 
-        <Button href="/order" disabled={+this.getTotal() < 200}>{+this.getTotal() >= 200 ? 'Order' : 'Min order amount is 200$'}</Button>
+        <Button disabled={+this.getTotal() < 200}>
+          <Link to="/order">{+this.getTotal() >= 200 ? 'Order' : 'Min order amount is 200$'}</Link>
+          </Button>
       </div>
     );
   }
