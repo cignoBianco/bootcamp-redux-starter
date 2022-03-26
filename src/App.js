@@ -1,9 +1,11 @@
 import React, { PureComponent } from "react";
 import "./styles.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from './components/Header';
-import Goods from './components/Goods';
-import Cart from './components/Cart';
+import Order from './components/Order';
+import Main from './components/Main';
+import { Route, Routes } from "react-router-dom";
 
 class App extends PureComponent {
   render() {
@@ -13,13 +15,11 @@ class App extends PureComponent {
           <Header />
         </header>
         <main className="app__main">
-          <div className="app__goods">
-            <Goods />
-          </div>
-          <div className="app__cart">
-            <Cart />
-          </div>
-        </main>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/order" element={<Order />} />
+        </Routes>
+          </main>
       </div>
     );
   }

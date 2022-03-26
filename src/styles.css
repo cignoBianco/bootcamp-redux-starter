@@ -3,6 +3,10 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+}  
+
+header a {
+  text-decoration: none;
 }
 
 .header {
